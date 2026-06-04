@@ -50,6 +50,12 @@ python3 -m http.server 8000
 # then open http://localhost:8000
 ```
 
+## Deployment (GitHub Pages)
+
+Since this is a static site, it can be served directly from the repo by GitHub Pages.
+
+One-time setup: repo **Settings → Pages → Build and deployment → Source: "Deploy from a branch" → Branch: `main` / `/ (root)` → Save**. After that, every push to `main` auto-deploys to `https://tfsourav.github.io/fitplate/`.
+
 ## License
 
 Educational content only — not medical advice.
