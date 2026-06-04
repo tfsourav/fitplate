@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="FitPlate — simple daily food habits to stay fit, energized, and healthy for life." />
+  <title>FitPlate — Daily Food Habits to Stay Fit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="nav" id="top">
+    <div class="container nav__inner">
+      <a href="#top" class="brand">
+        <span class="brand__logo">🥗</span>
+        <span class="brand__name">FitPlate</span>
+      </a>
+      <nav class="nav__links" id="navLinks">
+        <a href="#habits">Habits</a>
+        <a href="#meals">Meal Plan</a>
+        <a href="#hydration">Hydration</a>
+        <a href="#tips">Tips</a>
+        <a href="tracker.html" class="nav__cta">My Tracker</a>
+      </nav>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <span class="badge">🌱 Eat well, live well</span>
+        <h1>Daily food habits to <span class="accent">stay fit</span> for life</h1>
+        <p class="hero__sub">
+          Small, consistent choices beat extreme diets. Build a routine of simple,
+          whole-food habits that keep your energy high and your body strong — no
+          calorie obsession required.
+        </p>
+        <div class="hero__actions">
+          <a href="#habits" class="btn btn--primary">Explore daily habits</a>
+          <a href="#meals" class="btn btn--ghost">See a sample day</a>
+        </div>
+        <div class="hero__stats">
+          <div class="stat"><strong id="statHabits">7</strong><span>Core habits</span></div>
+          <div class="stat"><strong>5–9</strong><span>Servings veg &amp; fruit</span></div>
+          <div class="stat"><strong>2L+</strong><span>Water daily</span></div>
+        </div>
+      </div>
+      <div class="hero__art" aria-hidden="true">
+        <div class="orbit"></div>
+        <div class="donut">
+          <svg viewBox="0 0 200 200" class="donut__svg">
+            <circle class="seg seg--track" cx="100" cy="100" r="62"></circle>
+            <circle class="seg seg--veg" cx="100" cy="100" r="62"></circle>
+            <circle class="seg seg--protein" cx="100" cy="100" r="62"></circle>
+            <circle class="seg seg--grain" cx="100" cy="100" r="62"></circle>
+          </svg>
+          <div class="donut__center">
+            <span class="donut__icon">🍽️</span>
+            <small>Balanced plate</small>
+          </div>
+          <span class="seg-label seg-label--veg">🥦 Veggies <b>50%</b></span>
+          <span class="seg-label seg-label--protein">🍗 Protein <b>25%</b></span>
+          <span class="seg-label seg-label--grain">🌾 Grains <b>25%</b></span>
+        </div>
+        <div class="float float--1">🥑</div>
+        <div class="float float--2">🫐</div>
+        <div class="float float--3">💧</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Habits -->
+  <section class="section" id="habits">
+    <div class="container">
+      <div class="section__head">
+        <h2>7 daily food habits</h2>
+        <p>Do these most days and consistency does the rest.</p>
+      </div>
+      <div class="grid grid--habits">
+        <article class="card">
+          <div class="card__icon">🌅</div>
+          <h3>Start with protein</h3>
+          <p>A protein-rich breakfast (eggs, yogurt, tofu) curbs cravings and steadies energy all morning.</p>
+        </article>
+        <article class="card">
+          <div class="card__icon">🥦</div>
+          <h3>Half your plate veggies</h3>
+          <p>Fill half of every meal with vegetables for fiber, vitamins, and lasting fullness.</p>
+        </article>
+        <article class="card">
+          <div class="card__icon">💧</div>
+          <h3>Hydrate first</h3>
+          <p>Drink a glass of water before each meal. Thirst is often mistaken for hunger.</p>
+        </article>
+        <article class="card">
+          <div class="card__icon">🍓</div>
+          <h3>Whole over processed</h3>
+          <p>Choose whole foods over packaged snacks. Fewer ingredients, more nutrients.</p>
+        </article>
+        <article class="card">
+          <div class="card__icon">🍽️</div>
+          <h3>Eat mindfully</h3>
+          <p>Slow down, chew well, and stop at 80% full. Your gut needs ~20 minutes to signal fullness.</p>
+        </article>
+        <article class="card">
+          <div class="card__icon">🌰</div>
+          <h3>Smart snacking</h3>
+          <p>Pair protein with fiber — nuts, fruit, hummus — to avoid mid-afternoon crashes.</p>
+        </article>
+        <article class="card">
+          <div class="card__icon">🌙</div>
+          <h3>Finish early</h3>
+          <p>Try to eat your last meal 2–3 hours before bed for better digestion and sleep.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Meal plan -->
+  <section class="section section--alt" id="meals">
+    <div class="container">
+      <div class="section__head">
+        <h2>A sample day on a plate</h2>
+        <p>Balanced, simple, and flexible — swap items for what you love.</p>
+      </div>
+      <div class="timeline">
+        <div class="meal">
+          <div class="meal__time">7:30 AM</div>
+          <div class="meal__body">
+            <h3>🍳 Breakfast</h3>
+            <p>Veggie omelette, oats with berries, and a glass of water.</p>
+          </div>
+        </div>
+        <div class="meal">
+          <div class="meal__time">10:30 AM</div>
+          <div class="meal__body">
+            <h3>🍎 Snack</h3>
+            <p>An apple with a small handful of almonds.</p>
+          </div>
+        </div>
+        <div class="meal">
+          <div class="meal__time">1:00 PM</div>
+          <div class="meal__body">
+            <h3>🥗 Lunch</h3>
+            <p>Grilled chicken or chickpea bowl, quinoa, and a big mixed salad.</p>
+          </div>
+        </div>
+        <div class="meal">
+          <div class="meal__time">4:30 PM</div>
+          <div class="meal__body">
+            <h3>🥕 Snack</h3>
+            <p>Greek yogurt or carrot sticks with hummus.</p>
+          </div>
+        </div>
+        <div class="meal">
+          <div class="meal__time">7:30 PM</div>
+          <div class="meal__body">
+            <h3>🐟 Dinner</h3>
+            <p>Baked salmon or lentils, roasted veggies, and brown rice.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hydration -->
+  <section class="section" id="hydration">
+    <div class="container hydration">
+      <div class="hydration__text">
+        <h2>Stay hydrated, stay sharp</h2>
+        <p>
+          Even mild dehydration drains focus and energy. Aim for around 2 liters a
+          day — more if you're active or it's hot. Use this quick tracker to see how
+          your glasses add up.
+        </p>
+        <ul class="check">
+          <li>Glass on waking up</li>
+          <li>Before every meal</li>
+          <li>During &amp; after exercise</li>
+          <li>Swap one soda for water</li>
+        </ul>
+      </div>
+      <div class="hydration__tracker">
+        <p class="tracker__label">Glasses today: <strong id="glassCount">0</strong> / 8</p>
+        <div class="glasses" id="glasses"></div>
+        <div class="tracker__actions">
+          <button class="btn btn--primary" id="addGlass">+ Add a glass</button>
+          <button class="btn btn--ghost" id="resetGlass">Reset</button>
+        </div>
+        <p class="tracker__msg" id="trackerMsg">Tap “Add a glass” each time you drink water.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tips -->
+  <section class="section section--alt" id="tips">
+    <div class="container">
+      <div class="section__head">
+        <h2>Quick tips that stick</h2>
+        <p>Tiny tweaks with an outsized payoff.</p>
+      </div>
+      <div class="grid grid--tips">
+        <div class="tip">🛒 <span>Shop the store perimeter — that's where fresh foods live.</span></div>
+        <div class="tip">🍱 <span>Meal-prep 2–3 days ahead to dodge fast-food temptation.</span></div>
+        <div class="tip">🧂 <span>Season with herbs and spices instead of extra salt.</span></div>
+        <div class="tip">🍫 <span>Allow treats in moderation — restriction backfires.</span></div>
+        <div class="tip">🥄 <span>Use smaller plates to keep portions in check.</span></div>
+        <div class="tip">😴 <span>Sleep 7–8 hours; poor sleep spikes hunger hormones.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta" id="cta">
+    <div class="container cta__inner">
+      <h2>Start your healthier routine today</h2>
+      <p>Get a free one-page daily habits checklist delivered to your inbox.</p>
+      <form class="cta__form" id="ctaForm" novalidate>
+        <input type="email" id="email" placeholder="you@example.com" aria-label="Email address" required />
+        <button type="submit" class="btn btn--primary">Send me the guide</button>
+      </form>
+      <p class="cta__note" id="ctaNote">No spam. Unsubscribe anytime.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="brand">
+        <span class="brand__logo">🥗</span>
+        <span class="brand__name">FitPlate</span>
+      </div>
+      <p>Eat well today, feel great tomorrow.</p>
+      <p class="footer__copy">© <span id="year"></span> FitPlate. Educational content only — not medical advice.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

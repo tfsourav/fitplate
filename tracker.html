@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="FitPlate Tracker — log your daily foods and water and review your history on a calendar." />
+  <title>FitPlate — My Tracker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="nav nav--solid" id="top">
+    <div class="container nav__inner">
+      <a href="index.html" class="brand">
+        <span class="brand__logo">🥗</span>
+        <span class="brand__name">FitPlate</span>
+      </a>
+      <nav class="nav__links" id="navLinks">
+        <a href="index.html#habits">Habits</a>
+        <a href="index.html#meals">Meal Plan</a>
+        <a href="index.html#tips">Tips</a>
+        <span class="nav__user" id="navUser" hidden></span>
+        <button class="btn btn--ghost nav__authbtn" id="signOutBtn" hidden>Sign out</button>
+        <a href="#" class="nav__cta" id="openAuthBtn">Log in</a>
+      </nav>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="tracker container">
+    <div class="tracker__head">
+      <div>
+        <h1>My Tracker</h1>
+        <p class="tracker__sub" id="trackerSub">Log what you eat and drink each day, then review it on the calendar.</p>
+      </div>
+      <div class="tracker__mode" id="modeBadge" title="Where your data is stored"></div>
+    </div>
+
+    <!-- Today panel -->
+    <section class="panel" id="todayPanel">
+      <div class="panel__head">
+        <h2 id="todayTitle">Today</h2>
+        <span class="panel__date" id="todayDate"></span>
+      </div>
+
+      <div class="today__grid">
+        <!-- Water -->
+        <div class="today__card">
+          <h3>💧 Water</h3>
+          <div class="water">
+            <button class="water__btn" id="waterMinus" aria-label="Remove a glass">−</button>
+            <div class="water__count"><strong id="waterCount">0</strong><span>/ 8 glasses</span></div>
+            <button class="water__btn" id="waterPlus" aria-label="Add a glass">+</button>
+          </div>
+          <div class="water__bar"><span id="waterFill"></span></div>
+        </div>
+
+        <!-- Foods -->
+        <div class="today__card">
+          <h3>🍽️ Foods</h3>
+          <form class="food__form" id="foodForm">
+            <select id="foodMeal" aria-label="Meal">
+              <option value="breakfast">🌅 Breakfast</option>
+              <option value="lunch">🥗 Lunch</option>
+              <option value="dinner">🐟 Dinner</option>
+              <option value="snack">🍎 Snack</option>
+            </select>
+            <input id="foodName" type="text" placeholder="e.g. Greek yogurt & berries" aria-label="Food" maxlength="80" />
+            <button type="submit" class="btn btn--primary">Add</button>
+          </form>
+          <ul class="food__list" id="foodList"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Calendar -->
+    <section class="panel">
+      <div class="panel__head">
+        <h2>Calendar</h2>
+        <div class="cal__nav">
+          <button class="water__btn" id="calPrev" aria-label="Previous month">‹</button>
+          <span class="cal__month" id="calMonth"></span>
+          <button class="water__btn" id="calNext" aria-label="Next month">›</button>
+        </div>
+      </div>
+      <div class="cal__weekdays">
+        <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+      </div>
+      <div class="cal__grid" id="calGrid"></div>
+      <p class="cal__hint">Tap any day to view or edit its log.</p>
+    </section>
+  </main>
+
+  <!-- Auth modal -->
+  <div class="modal" id="authModal" hidden>
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__card" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+      <button class="modal__close" id="authClose" aria-label="Close">×</button>
+      <h2 id="authTitle">Welcome to FitPlate</h2>
+      <p class="modal__sub" id="authSub">Create an account or log in to save your history across devices.</p>
+      <form id="authForm">
+        <label>Email<input type="email" id="authEmail" required placeholder="you@example.com" /></label>
+        <label>Password<input type="password" id="authPassword" required minlength="6" placeholder="At least 6 characters" /></label>
+        <p class="modal__error" id="authError" hidden></p>
+        <p class="modal__note" id="authMsg" hidden></p>
+        <button type="submit" class="btn btn--primary btn--block" id="authSubmit">Log in</button>
+      </form>
+      <p class="modal__switch">
+        <span id="authSwitchText">New here?</span>
+        <a href="#" id="authSwitch">Create an account</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- Day detail modal -->
+  <div class="modal" id="dayModal" hidden>
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__card" role="dialog" aria-modal="true" aria-labelledby="dayTitle">
+      <button class="modal__close" id="dayClose" aria-label="Close">×</button>
+      <h2 id="dayTitle">Day</h2>
+      <div class="day__water">💧 <strong id="dayWater">0</strong> glasses</div>
+      <ul class="food__list" id="dayFoods"></ul>
+      <p class="modal__note" id="dayEmpty" hidden>No entries logged for this day.</p>
+      <button class="btn btn--ghost btn--block" id="dayEdit">Open this day in Today view</button>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a href="index.html" class="brand"><span class="brand__logo">🥗</span><span class="brand__name">FitPlate</span></a>
+      <p class="footer__copy">© <span id="year"></span> FitPlate. Educational content only — not medical advice.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+  <script src="config.js"></script>
+  <script src="tracker.js"></script>
+</body>
+</html>
